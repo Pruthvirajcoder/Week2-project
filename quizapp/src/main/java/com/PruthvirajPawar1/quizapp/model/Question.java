@@ -1,4 +1,4 @@
-package com.PruthvirajPawar1.quizapp;
+package com.PruthvirajPawar1.quizapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,5 +21,6 @@ public class Question {
     private  String option4;
     private  String rightAnswer;
     private String difficultylevel;
+    private String category;
 
 }
