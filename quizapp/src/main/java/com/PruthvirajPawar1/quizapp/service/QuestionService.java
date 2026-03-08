@@ -1,7 +1,7 @@
 package com.PruthvirajPawar1.quizapp.service;
 
 import com.PruthvirajPawar1.quizapp.model.Question;
-import com.PruthvirajPawar1.quizapp.dao.QuestionDao;
+import com.PruthvirajPawar1.quizapp.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,26 +11,26 @@ import java.util.List;
 public class QuestionService {
 
     @Autowired
-    QuestionDao questionDao;
+    QuestionRepository questionRepository;
     public List<Question> getAllQuestions() {
-        return questionDao.findAll();
+        return questionRepository.findAll();
 
 
 
     }
 
     public List<Question> getQuestionsByCategory(String category) {
-        return questionDao.findBycategory(category);
+        return questionRepository.findBycategory(category);
     }
 
     public String addQuestion(Question question) {
-        questionDao.save(question);
+        questionRepository.save(question);
         return "success";
     }
 
     public boolean deleteQuestion(Integer id) {
-        if(questionDao.existsById(id)){
-            questionDao.deleteById(id);
+        if(questionRepository.existsById(id)){
+            questionRepository.deleteById(id);
             return true;
         } else {
             return false;

@@ -1,4 +1,4 @@
-package com.PruthvirajPawar1.quizapp.dao;
+package com.PruthvirajPawar1.quizapp.repository;
 
 import com.PruthvirajPawar1.quizapp.model.Question;
 import org.springframework.data.jpa.repository.Query;
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 @Repository
-public interface QuestionDao extends JpaRepository<Question,Integer> {
+public interface QuestionRepository extends JpaRepository<Question,Integer> {
     List<Question> findBycategory(String category);
 
 
